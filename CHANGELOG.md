@@ -1,3 +1,25 @@
+## Blinder v1.2
+
+### New Features
+- Add first-run tutorial
+- Add automated screenshot generation and fix release workflow
+- Add settings to show or hide timer and daily goal in the menu bar
+- Add daily goal, app icon and menu bar glyph
+- Add alert sounds based on apple library
+- Add screenshots to release pipeline
+
+### Bug Fixes
+- Fix several timer and sync bugs
+
+### Other Changes
+- Update README for the public releases page
+- Bump version to 1.2
+- Move timer logic into TimerService and fix timer, notification and Notion bugs
+- Update app icon to glass B on royal blue
+
+
+---
+
 ## Blinder v1.1
 
 ### New Features

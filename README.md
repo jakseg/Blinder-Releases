@@ -1,107 +1,60 @@
-# Blinder
+<h1 align="center">Blinder</h1>
 
-A minimal Pomodoro timer for your Mac menu bar. Focus on your tasks with timed work sessions, short breaks, and long breaks — all without leaving your workflow.
+<p align="center">
+  <b>A calm Pomodoro timer that lives in your Mac's menu bar.</b><br>
+  Pick a task, hit start, and let Blinder keep time — no windows, no account, no distractions.
+</p>
 
-![Task List](screenshots/tasks.png)
+<p align="center">
+  <a href="https://github.com/jakseg/Blinder-Releases/releases/latest"><b>⬇&nbsp;Download for macOS</b></a>
+  &nbsp;·&nbsp; free &nbsp;·&nbsp; macOS 26 Tahoe
+</p>
 
-## Features
+<p align="center">
+  <img src="screenshots/tasks.png" width="380" alt="Blinder's task list opened from the menu bar">
+</p>
 
-- **Menu Bar Timer** — Always visible countdown in your menu bar
-- **Pomodoro Cycles** — Work → Short Break → Work → ... → Long Break, automatically
-- **Auto-Start** — Optionally start the next phase automatically to stay in flow
-- **Notion Sync** — Import tasks from your Notion database and sync completion status
-- **Reminders & Notes Import** — Pull tasks from Apple Reminders or Notes
-- **Notifications** — Get notified when a phase ends (configurable per phase)
-- **Circular Timer** — Optional analog clock display
-- **Cycle Tracking** — See completed cycles (1×, 2×, 3×...) and work time per task
+## Why Blinder
+
+- **Always in sight** — the countdown and today's progress sit in your menu bar (`17:19 · 3/6`).
+- **Pomodoro on autopilot** — focus, short break, long break. The next phase starts by itself if you want it to.
+- **A daily goal** — decide how many pomodoros today is worth and watch the counter fill up.
+- **Built around tasks** — every task tracks its pomodoros and time worked; finished ones move to *Completed today*.
+- **Brings your tasks along** — import from Apple Reminders or Notion. Notion tasks sync automatically and are marked done in Notion when you finish them.
+- **Gentle alerts** — a banner and a macOS sound of your choice when a phase ends, configurable per phase.
+- **Private by design** — everything stays on your Mac. No account, no analytics; the only connection is Notion, if you set it up.
 
 ## Screenshots
 
-| Timer | Notification | Task List |
-|-------|-------------|-----------|
-| ![Timer](screenshots/timer.png) | ![Notification](screenshots/notification.png) | ![Tasks](screenshots/tasks.png) |
+| Timer | Settings |
+|:---:|:---:|
+| <img src="screenshots/timer.png" width="320" alt="Timer"> | <img src="screenshots/settings.png" width="320" alt="Settings"> |
+| **Notion import** | **Phase complete** |
+| <img src="screenshots/notion.png" width="320" alt="Notion import"> | <img src="screenshots/notification.png" width="320" alt="Notification"> |
 
-| Settings | Notion Sync |
-|----------|-------------|
-| ![Settings](screenshots/settings.png) | ![Notion](screenshots/notion.png) |
+## Install
 
-## Installation
+1. [Download the latest `.dmg`](https://github.com/jakseg/Blinder-Releases/releases/latest) and drag **Blinder** into *Applications*.
+2. Open Blinder. Because it isn't notarized by Apple yet, macOS blocks the first launch — go to **System Settings → Privacy & Security** and click **Open Anyway** (only once).
+3. Click the **B** in your menu bar — a short tour shows you around, then allow notifications when asked.
 
-1. Download the latest `.dmg` from [Releases](https://github.com/jakseg/Blinder-Releases/releases)
-2. Open the `.dmg` and drag **Blinder** to your Applications folder
-3. Launch Blinder — it appears in your menu bar as a timer icon
+Press `Space` to start or pause the timer.
 
-> **Note:** On first launch, macOS may show a security warning. Go to **System Settings → Privacy & Security** and click "Open Anyway".
+<details>
+<summary><b>Connect Notion</b></summary>
 
-## Usage
+1. Create an integration at [notion.so/my-integrations](https://www.notion.so/my-integrations) and copy its secret.
+2. In your task database, open **••• → Connections** and add the integration.
+3. Copy the database ID from its URL: `notion.so/<workspace>/<DATABASE_ID>?v=…`
+4. In Blinder, open **Import → Notion**, paste both and click **Connect & Load Tasks**.
 
-### Basic Workflow
-
-1. Add tasks or import them from Notion/Reminders
-2. Click a task to start the Pomodoro timer
-3. Work for 25 minutes (default), then take a 5-minute break
-4. After 4 work sessions, take a longer 15-minute break
-5. Repeat — the cycle counter shows your progress (1×, 2×, 3×...)
-
-### Settings
-
-Open settings via the gear icon in the task list:
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| Focus time | 25 min | Duration of a work session |
-| Short break | 5 min | Break between work sessions |
-| Long break | 15 min | Break after a full cycle |
-| Until long break | 4 | Work sessions before a long break |
-| Circular timer | Off | Show an analog clock instead of digits |
-| Auto-start next phase | On | Automatically start the next phase |
-
-### Notifications
-
-Enable alerts in Settings to get notified when a phase ends. You can configure notifications independently for:
-
-- Focus time complete
-- Short break complete
-- Long break complete
-
-Sound can be toggled separately from visual alerts.
-
-> **Important:** Make sure to allow notifications for Blinder in **System Settings → Notifications → Blinder**. Without this, notifications won't appear even if enabled in the app.
-
-### Notion Integration
-
-Connect your Notion database to import and sync tasks:
-
-1. Create a [Notion Integration](https://www.notion.so/my-integrations) and copy the API key
-2. Share your database with the integration (click "..." on the database → "Connections" → add your integration)
-3. Copy your database ID from the URL: `notion.so/your-workspace/DATABASE_ID?v=...`
-4. In Blinder, go to **Import → Notion** and paste your API key and database ID
-5. Click **Connect & Load Tasks**
-
-**Features:**
-- Tasks sync automatically on app start
-- Completion status syncs back to Notion (requires a "Status" property)
-- Filter which tasks to import (by status, tags, etc.)
-- Blinder auto-detects your "Done" and "Not Started" status values
-
-### Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| `Space` | Start / Pause timer |
-| `⌘Q` | Quit Blinder |
-
-## Privacy
-
-- All data stays on your Mac (local SwiftData database)
-- No analytics, no tracking, no telemetry
-- Notion API key is stored locally in UserDefaults — never shared with anyone except Notion's API (`https://api.notion.com`) over HTTPS
-- No other network connections
+Blinder detects your status property and its *Done* value automatically. The secret is stored in your macOS Keychain and only ever sent to `api.notion.com`.
+</details>
 
 ## Requirements
 
-- macOS 26 (Tahoe) or later
+macOS 26 (Tahoe) or later.
 
-## License
+---
 
 Blinder is free to use. All rights reserved — the source code is not included in this distribution.
