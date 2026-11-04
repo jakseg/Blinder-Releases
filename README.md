@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="screenshots/icon.png" width="128" height="128" alt="Blinder app icon">
+</p>
+
 <h1 align="center">Blinder</h1>
 
 <p align="center">

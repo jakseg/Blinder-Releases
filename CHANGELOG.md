@@ -1,3 +1,21 @@
+## Blinder v1.2.1
+
+### New Features
+- Add designed DMG installer window
+- Add new app icon to tutorial, README and screenshots
+
+### Bug Fixes
+- Fix DMG script failing on the release runner
+- Fix app icon rendering in the .icns fallback
+- Fix deleting tasks in edit mode
+
+### Other Changes
+- Bump version to 1.2.1
+- Separate debug builds from the installed app and read the Notion token once
+
+
+---
+
 ## Blinder v1.2
 
 ### New Features
