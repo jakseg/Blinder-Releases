@@ -1,3 +1,14 @@
+## Blinder v1.2.2
+
+### Bug Fixes
+- Fix notifications being blocked in release builds
+
+### Other Changes
+- Bump version to 1.2.2
+
+
+---
+
 ## Blinder v1.2.1
 
 ### New Features
