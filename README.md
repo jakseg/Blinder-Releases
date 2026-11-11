@@ -14,9 +14,7 @@
   &nbsp;·&nbsp; free &nbsp;·&nbsp; macOS 26 Tahoe
 </p>
 
-<p align="center">
-  <img src="screenshots/tasks.png" width="380" alt="Blinder's task list opened from the menu bar">
-</p>
+https://github.com/user-attachments/assets/c8fef2e8-a0cd-434e-8b76-db46e46ce3de
 
 ## Why Blinder
 
